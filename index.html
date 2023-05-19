@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mi página de prueba</title>
+  <style>
+    #image {
+      width: 400px;
+      height: 300px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+
+<body>
+  <p>Adrian Barroso Barrios </p><br>
+  <p>Tecnologias de la Informacion: Infraestructura en Redes Digitales</p><br>
+  <p>20223TN150@utez.edu.mx</p><br>
+  <p>20223TN150</p><br>
+  <p>Preparatoria Abierta</p><br>
+  <p>Pasatiempos: Senderismo, viajar y subir montañas</p><br>
+
+  <center>
+    <h1>Discos Iron Maiden</h1>
+    <img id="imagenCam" src="img/img1.jpg" alt="Imagen inicial" style="width: 500px; height: 300px;">
+    <br>
+    <button class="button" onclick="previousBtn()">Anterior</button>
+    <button class="button2" onclick="nextBtn()">Siguiente</button>
+  </center>
+<script>
+
+  var imagenes = [
+    "img/img1.jpg",
+    "img/img2.jpg",
+    "img/img3.jpg",
+    "img/img4.jpg",
+    "img/img5.jpg"
+  ];
+
+  var index = 0;
+
+  function nextBtn() {
+    index = (index + 1) % imagenes.length;
+    cambiarImagen(index);
+  }
+
+  function previousBtn() {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    cambiarImagen(index);
+  }
+
+  function cambiarImagen(indice) {
+    var imagen = document.getElementById("imagenCam");
+    imagen.src = imagenes[indice];
+  }
+</script>
+</body>
+
+</html>
